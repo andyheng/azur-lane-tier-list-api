@@ -19,4 +19,10 @@ app.use(function(req, res, next) {
 
 // main
 app.get("/", (req, res) => res.send("Testing"));
+
+// router routing
+const shipRoutes = require("./routes/shipRoutes");
+app.use("/api/ships", shipRoutes);
+
+// listen
 app.listen(3000 || process.env.PORT, () => console.log("API started"));
