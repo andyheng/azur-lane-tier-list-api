@@ -28,4 +28,16 @@ router.post("/", (req, res) => {
     })
 });
 
+// get 1
+router.get("/:id", (req, res) => {
+  database.Ship.findById(req.params.id)
+    .then(foundItem => {
+      console.log(`Showing found item: ${foundItem.name}`);
+      res.json(foundItem);
+    })
+    .catch(err => {
+      res.json(err);
+    })
+})
+
 module.exports = router;
