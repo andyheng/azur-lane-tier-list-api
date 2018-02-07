@@ -3,12 +3,41 @@ const mongoose = require("mongoose")
 
 // define schema
 const shipSchema = new mongoose.Schema({
-  name: String,
-  src: String,
-  hullType: String,
-  rarity: String,
-  position: String,
-  nation: String,
+  name: {
+    type: String,
+    required: true,
+    default: ""
+  },
+  src: {
+    type: String,
+    required: true,
+    default: "https://i.imgur.com/cyLnXiO.jpg"
+  },
+  hullType: {
+    type: String,
+    required: true,
+    default: "DD",
+    enum: ["DD", "CL", "CA", "BB", "BC", "CV", "CVL", "AR"]
+  },
+  rarity: {
+    type: String,
+    required: true,
+    default: "N",
+    enum: ["N", "R", "SR", "SSR"]
+  },
+  position: {
+    type: String,
+    required: true,
+    default: "Front",
+    enum: ["Front", "Back"]
+
+  },
+  nation: {
+    type: String,
+    required: true,
+    default: "Royal Navy",
+    enum: ["Sakura Empire", "Eagle Union", "Royal Navy", "Metalblood", "Eastern Radiance", "North Union", "Universal"]
+  },
   details: {
     additionalGun: {
       type: Boolean,
