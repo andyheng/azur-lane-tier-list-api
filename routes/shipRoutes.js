@@ -40,4 +40,16 @@ router.get("/:id", (req, res) => {
     })
 })
 
+// edit
+router.put("/:id", (req, res) => {
+  database.Ship.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    .then(updatedItem => {
+      console.log(`Updated: ${updatedItem.name}`);
+      res.json(updatedItem)
+    })
+    .catch(err => {
+      res.json(err);
+    })
+})
+
 module.exports = router;
