@@ -30,7 +30,12 @@ const shipSchema = new mongoose.Schema({
     required: true,
     default: "Front",
     enum: ["Front", "Back"]
-
+  },
+  tier: {
+    type: String,
+    required: true,
+    default: "T5",
+    enum: ["T0", "T1", "T2", "T3", "T4", "T5"]
   },
   nation: {
     type: String,
