@@ -52,4 +52,16 @@ router.put("/:id", (req, res) => {
     })
 })
 
+// delete
+router.delete("/:id", (req, res) => {
+  database.Ship.findByIdAndRemove(req.params.id)
+    .then(deletedItem => {
+      console.log(`${deletedItem.name} was removed`);
+      res.redirect("/");
+    })
+    .catch(err => {
+      console.log(err);
+    })
+})
+
 module.exports = router;
