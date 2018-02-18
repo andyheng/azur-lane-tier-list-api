@@ -25,4 +25,4 @@ const shipRoutes = require("./routes/shipRoutes");
 app.use("/api/ships", shipRoutes);
 
 // listen
-app.listen(3000 || process.env.PORT, () => console.log("API started"));
+app.listen(process.env.PORT || 3000, () => console.log("API started"));
