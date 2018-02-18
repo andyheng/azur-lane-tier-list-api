@@ -2,9 +2,10 @@
 
 // dependencies
 const mongoose = require("mongoose");
+require('dotenv').config()
 
 // setup
-const uri = "mongodb://localhost/al-api";
+const uri = process.env.DB_URI;
 mongoose.Promise = Promise;
 mongoose.connect(uri, {
   keepAlive: true,
