@@ -17,7 +17,7 @@ const shipSchema = new mongoose.Schema({
     type: String,
     required: true,
     default: "DD",
-    enum: ["DD", "CL", "CA", "BB", "BC", "CV", "CVL", "AR"]
+    enum: ["DD", "CL", "CA", "BB", "BC", "BBV", "CV", "CVL", "AR"]
   },
   rarity: {
     type: String,
